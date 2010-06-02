@@ -1,20 +1,27 @@
 package hm.edu.easymoods;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.view.*;
+import android.widget.EditText;
 
 public class SetButtonListener implements View.OnClickListener {
 	public Context ctx;
-		
+	public EditText redValue;
+	public EditText greenValue;
+	public EditText blueValue;
+	public EditText dimValue;
+	
 	public void onClick(View v) {
 	
 		//TODO: Signale an der LED-Leiste uebergeben
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
-		builder.setTitle("R= " + getRed() + " " +
+		builder.setTitle("R = " + getRed() + " " +
 						 "G = " + getGreen() + " " +
-						 "B = " + getBlue());
+						 "B = " + getBlue() + " " +
+						 "Dim = " + getDim());
 		
 		builder.setPositiveButton("OK", null);
 		AlertDialog ad = builder.create();
@@ -22,20 +29,19 @@ public class SetButtonListener implements View.OnClickListener {
 	}
 	
 	
-	// Die RGB-Werte werden vom SeekBars ausgelesen
 	public int getRed(){
-		return 100;
+		return Integer.parseInt( redValue.getText().toString() );
 	}
 	
 	public int getGreen(){
-		return 150;
+		return Integer.parseInt( greenValue.getText().toString() );
 	}
 	
 	public int getBlue(){
-		return 200;
+		return Integer.parseInt( blueValue.getText().toString() );
 	}
 	
 	public int getDim(){
-		return 100;
+		return Integer.parseInt( dimValue.getText().toString() );
 	}
 }
