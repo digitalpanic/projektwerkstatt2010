@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout
-	android:id="@+id/widget156"
+	android:id="@+id/tableLayout"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:orientation="vertical"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 >
 <TextView
-	android:id="@+id/widget96"
+	android:id="@+id/titleText"
 	android:layout_width="319px"
 	android:layout_height="wrap_content"
 	android:text="easy Moods"
@@ -31,13 +31,13 @@
 </TextView>
 
 <SeekBar
-	android:id="@+id/seek_RedColor"
+	android:id="@+id/redSeekbar"
 	android:layout_width="100px"
 	android:layout_height="fill_parent">
 </SeekBar>
 
 <EditText
-	android:id="@+id/edit_RedValue"
+	android:id="@+id/redVal"
 	android:layout_width="55px"
 	android:layout_height="30px"
 	android:text="0" android:textSize="8px"
@@ -60,13 +60,13 @@
 </TextView>
 
 <SeekBar
-	android:id="@+id/seek_GreenColor"
+	android:id="@+id/greenSeekbar"
 	android:layout_width="100px"
 	android:layout_height="fill_parent">
 </SeekBar>
 
 <EditText
-	android:id="@+id/edit_GreenValue"
+	android:id="@+id/greenVal"
 	android:layout_width="55px"
 	android:layout_height="30px"
 	android:text="0" android:textSize="8px"
@@ -89,13 +89,13 @@
 </TextView>
 
 <SeekBar
-	android:id="@+id/seek_BlueColor"
+	android:id="@+id/blueSeekbar"
 	android:layout_width="100px"
 	android:layout_height="fill_parent">
 </SeekBar>
 
 <EditText
-	android:id="@+id/edit_BlueValue"
+	android:id="@+id/blueVal"
 	android:layout_width="55px"
 	android:layout_height="30px"
 	android:text="0" android:textSize="8px"
@@ -132,13 +132,13 @@
 </TextView>
 
 <SeekBar
-	android:id="@+id/seek_Dim"
+	android:id="@+id/dimSeekbar"
 	android:layout_width="100px"
 	android:layout_height="fill_parent">
 </SeekBar>
 
 <EditText
-	android:id="@+id/edit_DimValue"
+	android:id="@+id/dimVal"
 	android:layout_width="55px"
 	android:layout_height="30px"
 	android:text="0" android:textSize="8px"
@@ -174,7 +174,7 @@
 </TextView>
 
 <ToggleButton
-	android:id="@+id/toggle_visualEq"
+	android:id="@+id/VisualEqToggle"
 	android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textOn="VQ on"
@@ -194,7 +194,7 @@
 	android:text="">
 </TextView>
 <Button
-	android:id="@+id/btn_setColor"
+	android:id="@+id/SetColorButton"
 	android:layout_width="wrap_content"
 	android:layout_height="39px"
 	android:text="set Color">
@@ -214,7 +214,7 @@
 	android:text="">
 </TextView>
 <Button
-	android:id="@+id/btn_Scent"
+	android:id="@+id/scentButton"
 	android:layout_width="wrap_content"
 	android:layout_height="39px"
 	android:text="Duft!"
