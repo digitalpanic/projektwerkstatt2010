@@ -2,4 +2,6 @@
 <resources>
     
     <string name="app_name">Easy Moods</string>
+
+<string name="device_ip_addr">127.0.0.1</string>
 </resources>
