@@ -33,7 +33,8 @@
 <SeekBar
 	android:id="@+id/redSeekbar"
 	android:layout_width="100px"
-	android:layout_height="fill_parent" android:max="255" android:progress="1">
+	android:layout_height="fill_parent"
+	android:max="255" android:progress="0">
 </SeekBar>
 
 <EditText
@@ -78,7 +79,8 @@
 <SeekBar
 	android:id="@+id/greenSeekbar"
 	android:layout_width="100px"
-	android:layout_height="fill_parent" android:max="255" android:progress="1">
+	android:layout_height="fill_parent"
+	android:max="255" android:progress="0">
 </SeekBar>
 
 <EditText
@@ -95,6 +97,9 @@
 	android:layout_height="fill_parent"
 	android:layout_width="10px">
 </TextView>
+<View
+	android:id="@+id/preview"
+  	android:layout_height="fill_parent" android:background="#ff0000ff"/>
 
 </TableRow>
 
@@ -115,16 +120,31 @@
 <SeekBar
 	android:id="@+id/blueSeekbar"
 	android:layout_width="100px"
-	android:layout_height="fill_parent" android:max="255" android:progress="1">
+	android:layout_height="fill_parent"
+	android:max="255" android:progress="255">
 </SeekBar>
 
 <EditText
 	android:id="@+id/blueVal"
 	android:layout_width="55px"
 	android:layout_height="30px"
-	android:text="0" android:textSize="8px"
+	android:text="0"
+	android:textSize="8px"
 	android:textStyle="normal">
 </EditText>
+<TextView
+	android:id="@+id/sep31"
+	android:text=""
+	android:layout_height="fill_parent"
+	android:layout_width="10px">
+</TextView>
+<TextView
+	android:id="@+id/previewHex"
+	android:text="ff0000ff"
+	android:layout_height="fill_parent"
+	android:layout_width="100px"
+	android:gravity="center">
+</TextView>
 </TableRow>
 
 <TableRow
@@ -158,16 +178,39 @@
 <SeekBar
 	android:id="@+id/dimSeekbar"
 	android:layout_width="100px"
-	android:layout_height="fill_parent" android:max="100" android:progress="1">
+	android:layout_height="fill_parent"
+	android:max="255" android:progress="255">
 </SeekBar>
 
 <EditText
 	android:id="@+id/dimVal"
 	android:layout_width="55px"
 	android:layout_height="30px"
-	android:text="0" android:textSize="8px"
-	android:textStyle="normal">
+	android:textSize="8px"
+	android:textStyle="normal" android:text="255">
 </EditText>
+</TableRow>
+
+<TableRow
+	android:id="@+id/row_sep4"
+	android:layout_width="320px"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+>
+<TextView
+	android:id="@+id/txt_sep5"
+	android:layout_width="10px"
+	android:layout_height="40px" android:gravity="center" android:text="IP:">
+</TextView>
+
+
+
+<TextView
+	android:id="@+id/ipAddrText"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" android:paddingTop="10px" android:text="127.0.0.1">
+</TextView>
+
 </TableRow>
 
 <TableRow
