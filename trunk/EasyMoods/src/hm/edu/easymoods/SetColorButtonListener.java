@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
 
-public class SetButtonListener implements View.OnClickListener {
+public class SetColorButtonListener implements View.OnClickListener {
 	public Context ctx;
 	public EditText redValue;
 	public EditText greenValue;

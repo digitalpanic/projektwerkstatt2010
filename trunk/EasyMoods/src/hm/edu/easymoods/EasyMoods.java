@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class Moods extends Activity {
+public class EasyMoods extends Activity {
 	public Button setColorButton;
 	public SeekBar seekBar;
 	public EditText redValue;
@@ -28,7 +28,7 @@ public class Moods extends Activity {
         
         // Listener fuer SetColorButton setzen
         setColorButton = (Button)findViewById(R.id.SetColorButton);
-        SetButtonListener setButtonListener = new SetButtonListener();
+        SetColorButtonListener setButtonListener = new SetColorButtonListener();
         setButtonListener.ctx = this;
         setColorButton.setOnClickListener(setButtonListener);
         
@@ -95,7 +95,7 @@ public class Moods extends Activity {
 
     }
     
-    // preview color berechnen
+    // preview Farbe berechnen
     public void updatePreview(){
     	int redVal = Integer.parseInt( redValue.getText().toString() );
     	int greenVal = Integer.parseInt( greenValue.getText().toString() );
@@ -111,8 +111,7 @@ public class Moods extends Activity {
     	
     	int previewColor = (int)buffer;
     	
-    	preview.setBackgroundColor(previewColor);
-    	
-    	previewHex.setText(Integer.toHexString(previewColor));
+    	preview.setBackgroundColor(previewColor);		// Farbe uebernehmen
+    	previewHex.setText(Integer.toHexString(previewColor));	// Farbe-Hex ausgeben
     }
 }
