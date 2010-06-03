@@ -11,10 +11,11 @@ public class SetColorButtonListener implements View.OnClickListener {
 	public EditText greenValue;
 	public EditText blueValue;
 	public EditText dimValue;
+	public String ipAddr;
 	
 	public void onClick(View v) {
 	
-		//TODO: Signale an der LED-Leiste uebergeben
+		//TODO Signale an die Platine uebergeben
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
 		builder.setTitle("R = " + getRed() + " " +

@@ -128,9 +128,8 @@
 	android:id="@+id/blueVal"
 	android:layout_width="55px"
 	android:layout_height="30px"
-	android:text="0"
 	android:textSize="8px"
-	android:textStyle="normal">
+	android:textStyle="normal" android:text="255">
 </EditText>
 <TextView
 	android:id="@+id/sep31"
@@ -208,7 +207,7 @@
 <TextView
 	android:id="@+id/ipAddrText"
 	android:layout_width="wrap_content"
-	android:layout_height="wrap_content" android:paddingTop="10px" android:text="127.0.0.1">
+	android:layout_height="wrap_content" android:paddingTop="10px" android:text="@string/ip_addr">
 </TextView>
 
 </TableRow>
@@ -281,11 +280,10 @@
 	android:text="">
 </TextView>
 <Button
-	android:id="@+id/scentButton"
 	android:layout_width="wrap_content"
 	android:layout_height="39px"
 	android:text="Duft!"
->
+android:id="@+id/duftButton">
 </Button>
 </TableRow>
 
