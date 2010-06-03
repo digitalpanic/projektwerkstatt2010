@@ -2,6 +2,7 @@ package hm.edu.easymoods;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +25,8 @@ public class EasyMoods extends Activity {
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+//        setContentView(R.layout.main);
+        setContentView(R.layout.manuelcolor);
         
         // Preview und PreviewHex auswaehlen
         preview = (View)findViewById(R.id.preview);

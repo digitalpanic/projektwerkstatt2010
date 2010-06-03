@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources> 
-    <string name="app_name">Easy Moods</string>
-	<string name="ip_addr">127.0.0.1</string>
+<resources>
+   <!-- <string name="hello">Hello World!</string> --> 
+    <string name="app_name">easyMoodsGui</string>
+    <string name="ip_addr">172.0.0.1</string>
+    <string name="tab_easy_moods"></string>
+    <string name="tab_about"></string>
+    <string name="tab_config"></string>
+    <string name="tab_profile"></string>
 </resources>
