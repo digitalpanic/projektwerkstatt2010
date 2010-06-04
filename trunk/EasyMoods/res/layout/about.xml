@@ -32,7 +32,7 @@
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:orientation="vertical">
 		<TextView android:id="@+id/txt_separator"
-			android:text="Die Anwendung ermöglicht es verschiedene Mooods (Stimmungen) über ein Android Gerät darzustellen. Die Darstellung geschieht nicht auf dem Gerät selbst, sondern über eine RGB-LED-Leiste und verschiedenen elektronischen Lufterfrischern." android:layout_height="wrap_content" android:layout_width="wrap_content">
+			android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Die Anwendung ermöglicht es verschiedene Moods (Stimmungen) über ein Android Gerät darzustellen. Die Darstellung geschieht nicht auf dem Gerät selbst, sondern über eine RGB-LED-Leiste und verschiedenen elektronischen Lufterfrischern.">
 		</TextView>
 </TableRow>
 <TableRow android:id="@+id/row_scentButton"
