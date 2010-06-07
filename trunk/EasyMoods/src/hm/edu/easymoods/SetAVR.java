@@ -11,10 +11,11 @@ public class SetAVR {
 	
 	private InetAddress address;
 	private static int port = 2702;
-	private static byte rChannel = 0;
-	private static byte gChannel = 1;
-	private static byte bChannel = 2;
-	private static byte scentChannel = 5;
+	private static byte rChannel = 2;
+	private static byte gChannel = 3;
+	private static byte bChannel = 4;
+	private static byte scentChannel1 = 5;
+	private static byte scentChannel2 = 6;
 	
 	public SetAVR(String ipAddress) {
 		try {
@@ -84,7 +85,7 @@ public class SetAVR {
 	void spray() {
 		byte[] data = new byte[3];
 		data[ 0 ] = 0; // Type
-		data[ 1 ] = this.scentChannel; // Channel
+		data[ 1 ] = this.scentChannel1; // Channel
 		data[ 2 ] = (byte) 255; // Value
 
  		DatagramSocket socket;
