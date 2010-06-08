@@ -1,6 +1,7 @@
 package hm.edu.easymoods;
 
 import java.io.IOException;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -11,11 +12,11 @@ public class SetAVR {
 	
 	private InetAddress address;
 	private static int port = 2702;
-	private static byte rChannel = 2;
-	private static byte gChannel = 3;
-	private static byte bChannel = 4;
-	private static byte scentChannel1 = 5;
-	private static byte scentChannel2 = 6;
+	private static byte rChannel = 0;
+	private static byte gChannel = 1;
+	private static byte bChannel = 2;
+	private static byte scentChannel1 = 3;
+	private static byte scentChannel2 = 4;
 	
 	public SetAVR(String ipAddress) {
 		try {
@@ -26,6 +27,7 @@ public class SetAVR {
 	}
 
 	void setColor(int rVal, int gVal, int bVal, int dimval) {
+		System.out.println("Drin!!");
 		double[] rgbVals = convert(rVal, gVal, bVal, dimval);
 		
 	   /*STELLA_SET_IMMEDIATELY=0,
@@ -33,7 +35,7 @@ public class SetAVR {
 	   STELLA_SET_FLASHY=2,
 	   STELLA_SET_IMMEDIATELY_RELATIVE=3,
 	   STELLA_GETALL = 255*/
-		   
+		System.out.println("Values converted:" + rgbVals[0]+ " " + rgbVals[1]+ " "  + rgbVals[2]);
 		//set R Value
 		byte[] rData = new byte[3];
 		rData[ 0 ] = 1; // Type
@@ -59,15 +61,15 @@ public class SetAVR {
 			DatagramPacket rPacket = new DatagramPacket(rData, rData.length, 
 			                                           address, port);
 			socket.send(rPacket);
-			
+			System.out.println("Send R !!");
 			DatagramPacket gPacket = new DatagramPacket(gData, gData.length,
 															address, port);
 			socket.send(gPacket);
-			
+			System.out.println("Send G !!");
 			DatagramPacket bPacket = new DatagramPacket(bData, bData.length,
 					address, port);
 			socket.send(bPacket);
-			
+			System.out.println("Send B !!");
 
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block

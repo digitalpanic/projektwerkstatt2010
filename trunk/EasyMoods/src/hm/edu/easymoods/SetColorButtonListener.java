@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.view.View;
 import android.widget.EditText;
+import android.Manifest;
 
 public class SetColorButtonListener implements View.OnClickListener {
 	public Context ctx;
@@ -16,9 +17,11 @@ public class SetColorButtonListener implements View.OnClickListener {
 	public String ipAddr;
 	
 	public void onClick(View v) {
-	
+		final SetAVR avr = new SetAVR("192.168.1.90");
+		System.out.println("BBBBBBB");
+		avr.setColor(getRed(), getGreen(), getBlue(), getDim());
 		//TODO Signale an die Platine uebergeben
-		final SetAVR avr = new SetAVR(ipAddr);
+		
 		AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
 		builder.setTitle("R = " + getRed() + " " +
 						 "G = " + getGreen() + " " +
@@ -29,6 +32,7 @@ public class SetColorButtonListener implements View.OnClickListener {
 		builder.setPositiveButton("OK", new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
+				System.out.println("AAAAA");
 				avr.setColor(getRed(), getGreen(), getBlue(), getDim());
 				
 			}
