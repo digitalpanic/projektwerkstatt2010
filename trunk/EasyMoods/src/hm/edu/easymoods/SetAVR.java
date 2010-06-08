@@ -26,31 +26,38 @@ public class SetAVR {
 		}
 	}
 
-	void setColor(int rVal, int gVal, int bVal, int dimval) {
-		System.out.println("Drin!!");
+	void setColor(int rVal, int gVal, int bVal, int dimval, StellaSetType type) {
 		double[] rgbVals = convert(rVal, gVal, bVal, dimval);
 		
-	   /*STELLA_SET_IMMEDIATELY=0,
-	   STELLA_SET_FADE=1,
-	   STELLA_SET_FLASHY=2,
-	   STELLA_SET_IMMEDIATELY_RELATIVE=3,
-	   STELLA_GETALL = 255*/
-		System.out.println("Values converted:" + rgbVals[0]+ " " + rgbVals[1]+ " "  + rgbVals[2]);
+		byte setType=0;
+		if (type == StellaSetType.STELLA_SET_IMMEDIATELY) {
+			setType = 0;
+		} else if (type == StellaSetType.STELLA_SET_FADE) {
+			setType = 1;
+		} else if (type == StellaSetType.STELLA_SET_FLASHY) {
+			setType = 2;
+		} else if (type == StellaSetType.STELLA_SET_IMMEDIATELY_RELATIVE) {
+			setType = 3;
+		} else if (type == StellaSetType.STELLA_GETALL) {
+			setType = 4;
+		}
+		
+		
 		//set R Value
 		byte[] rData = new byte[3];
-		rData[ 0 ] = 1; // Type
+		rData[ 0 ] = setType; // Type
 		rData[ 1 ] = this.rChannel; // Channel
 		rData[ 2 ] = (byte) rgbVals[0]; // Value
 		
 		//set G Value
 		byte[] gData = new byte[3];
-		gData[ 0 ] = 1; // Type
+		gData[ 0 ] = setType; // Type
 		gData[ 1 ] = this.gChannel; // Channel
 		gData[ 2 ] = (byte) rgbVals[1]; // Value
 		
 		//set B Value
 		byte[] bData = new byte[3];
-		bData[ 0 ] = 1; // Type
+		bData[ 0 ] = setType; // Type
 		bData[ 1 ] = this.bChannel; // Channel
 		bData[ 2 ] = (byte) rgbVals[2]; // Value
 
@@ -61,24 +68,21 @@ public class SetAVR {
 			DatagramPacket rPacket = new DatagramPacket(rData, rData.length, 
 			                                           address, port);
 			socket.send(rPacket);
-			System.out.println("Send R !!");
+			
 			DatagramPacket gPacket = new DatagramPacket(gData, gData.length,
 															address, port);
 			socket.send(gPacket);
-			System.out.println("Send G !!");
+			
 			DatagramPacket bPacket = new DatagramPacket(bData, bData.length,
 					address, port);
 			socket.send(bPacket);
-			System.out.println("Send B !!");
+	
 
 		} catch (SocketException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -99,13 +103,10 @@ public class SetAVR {
 			socket.send(packet);
 	
 		} catch (SocketException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
