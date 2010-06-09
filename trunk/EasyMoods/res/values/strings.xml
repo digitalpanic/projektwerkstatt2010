@@ -7,4 +7,13 @@
     <string name="tab_about"></string>
     <string name="tab_config"></string>
     <string name="tab_profile"></string>
+    <string name="About1">\neasyMoods wurde im Rahmen des FWP-Faches 'Projektwerkstatt' im Sommersemester 2010 an der Hochschule München entwickelt.
+                           \n \nDiese Anwendung sowie die Anbindung der Technik wurde umgesetzt von: Franziska Haunolder, Matthias Kühn, Jevgeni Zelenkov, Oliver Bobinger und Florian Leicher
+                           \n \nDie Anwendung ermöglicht es verschiedene Moods (Stimmungen) über ein Android Gerät darzustellen. Die Darstellung geschieht nicht auf dem Gerät selbst, sondern über eine RGB-LED-Leiste und verschiedenen elektronischen Lufterfrischern.
+                           \n \nBesonderer Dank gebührt Herrn Wass und Herrn Melic von Tara-Systems, welche dieses Projekt erst ermöglicht haben!   
+                           \n \nhttp://groups.google.de/group/projektwerkstatt2010 
+                           \n \nhttp://code.google.com/p/projektwerkstatt2010/</string>
+    
 </resources>
+ 
+            
