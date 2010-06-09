@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <!-- <string name="hello">Hello World!</string> --> 
-    <string name="app_name">easyMoodsGui</string>
-    <string name="ip_addr">192.168.1.90</string>
-    <string name="tab_easy_moods"></string>
-    <string name="tab_about"></string>
-    <string name="tab_config"></string>
-    <string name="tab_profile"></string>
-    <string name="About1">\neasyMoods wurde im Rahmen des FWP-Faches 'Projektwerkstatt' im Sommersemester 2010 an der Hochschule München entwickelt.
-                           \n \nDiese Anwendung sowie die Anbindung der Technik wurde umgesetzt von: Franziska Haunolder, Matthias Kühn, Jevgeni Zelenkov, Oliver Bobinger und Florian Leicher
-                           \n \nDie Anwendung ermöglicht es verschiedene Moods (Stimmungen) über ein Android Gerät darzustellen. Die Darstellung geschieht nicht auf dem Gerät selbst, sondern über eine RGB-LED-Leiste und verschiedenen elektronischen Lufterfrischern.
-                           \n \nBesonderer Dank gebührt Herrn Wass und Herrn Melic von Tara-Systems, welche dieses Projekt erst ermöglicht haben!   
-                           \n \nhttp://groups.google.de/group/projektwerkstatt2010 
-                           \n \nhttp://code.google.com/p/projektwerkstatt2010/</string>
-    
+	<!-- <string name="hello">Hello World!</string> -->
+	<string name="app_name">easyMoodsGui</string>
+	<string name="ip_addr">192.168.1.90</string>
+	<string name="tab_easy_moods"></string>
+	<string name="tab_about"></string>
+	<string name="tab_config"></string>
+	<string name="tab_profile"></string>
+	<string name="About1">\neasyMoods wurde im Rahmen des FWP-Faches
+		'Projektwerkstatt' im Sommersemester 2010 an der Hochschule München
+		entwickelt.
+		\n \nDiese Anwendung sowie die Anbindung der Technik wurde umgesetzt
+		von: 
+		\n - Matthias Kühn - Projektleitung
+		\n - Franziska Haunolder - Leitung Entwicklung
+		\n - Jevgeni Zelenkov - Entwicklung
+		\n - Florian Leicher - Leitung Technik
+		\n - Oliver Bobinger - Technik
+		\n \nDie Anwendung ermöglicht es verschiedene Moods (Stimmungen) über
+		ein Android Gerät darzustellen. Die Darstellung geschieht nicht auf
+		dem Gerät selbst, sondern über eine RGB-LED-Leiste und verschiedenen
+		elektronischen Lufterfrischern.
+		\n \nBesonderer Dank gebührt Herrn Wass und Herrn Melic von
+		Tara-Systems, welche dieses Projekt erst ermöglicht haben!
+		\n \nhttp://groups.google.de/group/projektwerkstatt2010
+		\n \nhttp://code.google.com/p/projektwerkstatt2010/
+		\n \nhttp://download.tara-systems.de/hochschule_muenchen/index.html</string>
+
 </resources>
  
             
