@@ -11,34 +11,23 @@
 	</TableRow>
 	<TableRow android:id="@+id/widget89" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="horizontal">
-		<TableRow android:id="@+id/widget85" android:layout_width="320px"
-			android:layout_height="wrap_content" android:orientation="horizontal">
-			<RadioGroup android:id="@+id/widget84"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:orientation="vertical">
-				<RadioButton android:id="@+id/widget91"
-					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:text="easy Mood 1">
+		
+	<TableRow android:id="@+id/widget85" android:layout_width="320px" android:layout_height="wrap_content" android:orientation="horizontal">
+			<RadioGroup android:id="@+id/widget84" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+				<RadioButton android:id="@+id/widget91" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="easy Mood 1">
 				</RadioButton>
-				<RadioButton android:id="@+id/widget94"
-					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:text="easy Mood 2">
+				<RadioButton android:id="@+id/widget94" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="easy Mood 2">
 				</RadioButton>
-				<RadioButton android:id="@+id/widget112"
-					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:text="easy Mood 3">
+				<RadioButton android:id="@+id/widget112" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="easy Mood 3">
 				</RadioButton>
-				<RadioButton android:id="@+id/widget93"
-					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:text="easy Mood 4">
+				<RadioButton android:id="@+id/widget93" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="easy Mood 4">
 				</RadioButton>
-				<RadioButton android:id="@+id/widget92"
-					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:text="easy Mood 5">
+				<RadioButton android:id="@+id/widget92" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="easy Mood 5">
 				</RadioButton>
+				
+		
 			</RadioGroup>
-		</TableRow>
-	</TableRow>
+		</TableRow></TableRow>
 	
 	<TableRow android:id="@+id/widget137" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="horizontal">
@@ -53,4 +42,5 @@
 		android:orientation="horizontal">
 		
 	</TableRow>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/SetProfileButton" android:text="Übernehmen"></Button>
 </TableLayout>
