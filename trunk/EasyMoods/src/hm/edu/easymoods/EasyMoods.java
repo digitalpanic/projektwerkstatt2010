@@ -43,7 +43,7 @@ public class EasyMoods extends Activity {
         duftButton.setOnClickListener(dbl);
         dbl.ctx = this;
         dbl.ipAddr = getString(R.string.ip_addr);
-        
+     
         // Listener fuer SetColorButton setzen und Context und ip-adresse uebergeben
         setColorButton = (Button)findViewById(R.id.SetColorButton);
         SetColorButtonListener sbl = new SetColorButtonListener();
