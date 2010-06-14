@@ -1,12 +1,56 @@
-<TableLayout android:id="@+id/tableLayout"
-	android:layout_width="fill_parent" android:layout_height="fill_parent"
-	android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
-	<TableRow android:id="@+id/row_scentButton"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:orientation="horizontal">
-		<TextView android:id="@+id/txt_separator"
-			android:layout_width="fill_parent" android:layout_height="fill_parent"
-			android:text="easyMoods config ...">
-		</TextView>
-</TableRow>
-</TableLayout>
+<ScrollView android:id="@+id/ScrollView02"
+	android:layout_height="wrap_content" android:layout_width="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<TableLayout android:id="@+id/tableLayout"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+		<TableRow android:id="@+id/row_scentButton"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<TextView android:id="@+id/widget96" android:layout_height="wrap_content"
+				android:text="Einstellungen" android:textSize="30px"
+				android:textStyle="bold" android:gravity="center">
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<TextView>
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<TextView android:text="IP-Adresse AVR:">
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<EditText>
+			</EditText>
+		</TableRow>
+		<TableRow>
+			<Button android:text="Übernehmen">
+			</Button>
+		</TableRow>
+		<TableRow>
+			<TextView>
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<TextView android:text="Lichtübergang">
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<RadioGroup>
+				<RadioButton android:text="Sofort">
+				</RadioButton>
+				<RadioButton android:text="Langsam">
+				</RadioButton>
+			</RadioGroup>
+		</TableRow>
+		<TableRow>
+			<TextView>
+			</TextView>
+		</TableRow>
+		<TableRow>
+			<TextView android:text="Profile">
+			</TextView>
+		</TableRow>
+	</TableLayout>
+</ScrollView>
