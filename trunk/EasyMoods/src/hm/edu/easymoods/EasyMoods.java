@@ -21,11 +21,13 @@ public class EasyMoods extends Activity {
 	public EditText dimValue;
 	public TextView previewHex;
 	public View preview;
-	
+	public SetAVR avr;
+		
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.main);
+    	super.onCreate(savedInstanceState);
+    	avr = new SetAVR(getString(R.string.ip_addr));
+    	
         setContentView(R.layout.manuelcolor);
         
         // Preview und PreviewHex auswaehlen
@@ -130,5 +132,8 @@ public class EasyMoods extends Activity {
     	
     	preview.setBackgroundColor(previewColor);		// Farbe uebernehmen
     	previewHex.setText(Integer.toHexString(previewColor));	// Farbe-Hex ausgeben
+    	
+    	// Farbeaenderung im real-time
+    	avr.setColor(redVal, greenVal, blueVal, dimVal, StellaSetType.STELLA_SET_FADE);
     }
 }

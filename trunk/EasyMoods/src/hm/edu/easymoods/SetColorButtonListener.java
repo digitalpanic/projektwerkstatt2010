@@ -17,27 +17,8 @@ public class SetColorButtonListener implements View.OnClickListener {
 	public String ipAddr;
 	
 	public void onClick(View v) {
-		final SetAVR avr = new SetAVR("192.168.1.90");
-		
-		//TODO Signale an die Platine uebergeben
-		
-		AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
-		builder.setTitle("R = " + getRed() + " " +
-						 "G = " + getGreen() + " " +
-						 "B = " + getBlue() + " " +
-						 "Dim = " + getDim());
-		
-		
-		builder.setPositiveButton("OK", new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface arg0, int arg1) {
-				avr.setColor(getRed(), getGreen(), getBlue(), getDim(), StellaSetType.STELLA_SET_FADE);
-				
-			}
-		});
-
-		AlertDialog ad = builder.create();
-		ad.show();
+		final SetAVR avr = new SetAVR(ctx.getString(R.string.ip_addr));
+		avr.setColor(getRed(), getGreen(), getBlue(), getDim(), StellaSetType.STELLA_SET_FADE);
 	}
 	
 	
