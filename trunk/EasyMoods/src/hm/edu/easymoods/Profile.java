@@ -9,6 +9,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -22,7 +24,29 @@ public class Profile extends Activity{
 	private Button setProfile;
 	private final SetAVR avr = new SetAVR("192.168.1.90");
 
-	
+	  public boolean onCreateOptionsMenu(Menu menu){
+    	menu.add(0,1,0,"Add Profile");
+    	menu.add(0,2,0,"Edit Profile");
+    	menu.add(0,3,0,"Delete Profile");
+    	return true;
+    	}
+    public boolean onOptionsItemSelected (MenuItem item){
+    	switch (item.getItemId()){
+    	case 1:
+    	/* Actions in case that Add Profile is pressed */
+    	return true;
+    	
+    	case 2:
+    	/* Actions in case that Edit Profile is pressed */
+    	return true;
+    	
+    	case 3: 
+    		
+    	/* Actions in case that Delete Profile is pressed */
+    	}
+    	
+    	return false;
+    	}
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
