@@ -27,7 +27,8 @@
 				
 		
 			</RadioGroup>
-		</TableRow></TableRow>
+		
+</TableRow></TableRow>
 	
 	<TableRow android:id="@+id/widget137" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="horizontal">
