@@ -12,24 +12,29 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 public class EasyMoods extends Activity {
-	public ToggleButton vqToggle;
-	public Button setColorButton;
-	public Button duftButton;
-	public SeekBar seekBar;
-	public EditText redValue;
-	public EditText greenValue;
-	public EditText blueValue;
-	public EditText dimValue;
-	public TextView previewHex;
-	public View preview;
-	public SetAVR avr;
+	private ToggleButton vqToggle;
+	private Button setColorButton;
+	private Button duftButton;
+	private SeekBar seekBar;
+	private EditText redValue;
+	private EditText greenValue;
+	private EditText blueValue;
+	private EditText dimValue;
+	private TextView previewHex;
+	private View preview;
+	private SetAVR avr;
+	private StellaSetType type;
+	private String ipAddress;
 		
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
-    	avr = new SetAVR(getString(R.string.ip_addr));
+    	ipAddress = getString(R.string.ip_addr);
+    	avr = new SetAVR(ipAddress);
     	
         setContentView(R.layout.manuelcolor);
+        
+        setStellaSetType(getString(R.string.stellaSetType));
         
         // Preview und PreviewHex auswaehlen
         preview = (View)findViewById(R.id.preview);
@@ -45,14 +50,14 @@ public class EasyMoods extends Activity {
         DuftButtonListener dbl = new DuftButtonListener();
         duftButton.setOnClickListener(dbl);
         dbl.ctx = this;
-        dbl.ipAddr = getString(R.string.ip_addr);
+        dbl.ipAddr = ipAddress;
      
         // Listener fuer SetColorButton setzen und Context und ip-adresse uebergeben
         setColorButton = (Button)findViewById(R.id.SetColorButton);
         SetColorButtonListener sbl = new SetColorButtonListener();
         setColorButton.setOnClickListener(sbl);
         sbl.ctx = this;
-        sbl.ipAddr = getString(R.string.ip_addr);
+        sbl.ipAddr = ipAddress;
         
         // EditTexts auswaehlen
         redValue = (EditText)findViewById(R.id.redVal);     
@@ -115,7 +120,17 @@ public class EasyMoods extends Activity {
         });
     }
     
-    // preview Farbe berechnen
+    private void setStellaSetType(String stellaSetType) {
+		
+    	if (stellaSetType.compareTo("immediate") == 0) {
+    		this.type = StellaSetType.STELLA_SET_IMMEDIATELY;
+    	} else if (stellaSetType.compareTo("fade") == 0) {
+    		this.type = StellaSetType.STELLA_SET_FADE;
+    	}
+		
+	}
+
+	// preview Farbe berechnen
     public void updatePreview(){
     	int redVal = Integer.parseInt( redValue.getText().toString() );
     	int greenVal = Integer.parseInt( greenValue.getText().toString() );
@@ -135,6 +150,16 @@ public class EasyMoods extends Activity {
     	previewHex.setText(Integer.toHexString(previewColor));	// Farbe-Hex ausgeben
     	
     	// Farbeaenderung im real-time
-    	avr.setColor(redVal, greenVal, blueVal, dimVal, StellaSetType.STELLA_SET_FADE);
+    	avr.setColor(redVal, greenVal, blueVal, dimVal, this.type);
     }
+
+	public void setType(StellaSetType type) {
+		this.type = type;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+    
+    
 }
