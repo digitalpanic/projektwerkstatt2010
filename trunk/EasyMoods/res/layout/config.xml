@@ -27,12 +27,11 @@
 			</TextView>
 		</TableRow>
 		<TableRow>
-			<EditText>
+			<EditText android:id="@+id/IPAddress">
 			</EditText>
 		</TableRow>
 		<TableRow>
-			<Button android:text="Übernehmen">
-			</Button>
+			
 		</TableRow>
 		<TableRow>
 			<TextView>
@@ -44,19 +43,20 @@
 		</TableRow>
 		<TableRow>
 			<RadioGroup>
-				<RadioButton android:text="Sofort">
+				<RadioButton android:text="Sofort" android:id="@+id/IsSet">
 				</RadioButton>
-				<RadioButton android:text="Langsam">
+				<RadioButton android:text="Langsam" android:id="@+id/IsFade">
 				</RadioButton>
 			</RadioGroup>
 		</TableRow>
 		<TableRow>
-			<TextView></TextView>
+			<Button android:text="Übernehmen" android:id="@+id/ApplyConfigButton">
+			</Button>
 		</TableRow>
 		<TableRow>
-			<TextView android:text="Profile" android:layout_width="wrap_content">   
+			
+		</TableRow><TextView android:text="Profile" android:layout_width="wrap_content">   
 			</TextView>
-		</TableRow>
             <TextView
             android:text="@string/ProfileText"></TextView>
 	</TableLayout>
