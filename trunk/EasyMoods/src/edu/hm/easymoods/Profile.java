@@ -33,6 +33,8 @@ public class Profile extends Activity{
     	switch (item.getItemId()){
 	    	case 1:
 	    	/* Actions in case that Add Profile is pressed */
+	    		addProfile(100, 100, 100, 255, 0, "Smoke", "BBQ Party!");
+	    		
 	    	return true;
 	    	
 	    	case 2:
@@ -40,7 +42,6 @@ public class Profile extends Activity{
 	    	return true;
 	    	
 	    	case 3: 
-	    		
 	    	/* Actions in case that Delete Profile is pressed */
 	    }
     	
@@ -51,10 +52,9 @@ public class Profile extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
         
-       //initCustomProfiles();
        Spinner profilesSpinner = (Spinner)findViewById(R.id.ProfilesSpinner);
        
-       createDefaults();
+//       createDefaults();
        
        readProfiles();
        
@@ -113,7 +113,7 @@ public class Profile extends Activity{
 			
 			pw.close();
     	
-		} catch (IOException e) {}
+		} catch (IOException e) { Log.d("Profile","IOException writing"); }
     }
 
 	
@@ -134,8 +134,23 @@ public class Profile extends Activity{
 		catch (FileNotFoundException e){
 			Log.d("Profile","File not found, try to create defaults");
 			createDefaults();
-		}catch (IOException e) { Log.d("Profile","IOException"); }
+		}catch (IOException e) { Log.d("Profile","IOException reading"); }
 		
+	}
+	
+	private void addProfile(int r, int g, int b, int d, int scent, String name, String desc){
+		try {	// append new profile
+			FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_APPEND);
+			
+			PrintWriter pw = new PrintWriter(new OutputStreamWriter(fos));
+			String newProfile = r + "," + g + "," + b + "," + d + "," + scent + "," + name + "," + desc;
+			
+			pw.println(newProfile);
+			pw.flush();
+			
+			pw.close();
+    	
+		} catch (IOException e) { Log.d("Profile","IOException writing"); }
 	}
 
 }
