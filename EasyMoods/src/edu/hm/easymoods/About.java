@@ -1,5 +1,6 @@
-package hm.edu.easymoods;
+package edu.hm.easymoods;
 
+import edu.hm.easymoods.R;
 import android.app.Activity;
 import android.os.Bundle;
 

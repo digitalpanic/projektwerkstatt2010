@@ -1,4 +1,4 @@
-package hm.edu.easymoods;
+package edu.hm.easymoods;
 
 public enum StellaSetType {
 	

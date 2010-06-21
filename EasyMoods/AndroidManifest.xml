@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="hm.edu.easymoods" android:versionCode="1" android:versionName="1.0">
+	package="edu.hm.easymoods" android:versionCode="1" android:versionName="1.0">
 	<application android:icon="@drawable/icon" android:theme="@android:style/Theme.NoTitleBar">
 		<activity android:name=".EasyMoodsStart" android:label="@string/app_name">
 			<intent-filter>
@@ -15,6 +15,5 @@
 	</application>
 	<uses-sdk android:minSdkVersion="4" />
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-
 <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
 </manifest> 
