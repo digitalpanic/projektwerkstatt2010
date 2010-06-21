@@ -43,8 +43,11 @@ public class Profile extends Activity{
 	    	
 	    	case 2:
 	    		/* Actions in case Edit Profile is pressed */
-	    		Intent editProfileIntent = new Intent(Profile.this, EditProfile.class);
+	    		EditProfile ee = new EditProfile();
+	    		
+	    		Intent editProfileIntent = new Intent(Profile.this, ee.getClass());
 	    	    startActivity(editProfileIntent);
+	    	    
 	    	    
 	    	    // 1. load current profile into the edit view
 	    	    // 2. like in Delete
