@@ -6,6 +6,7 @@ import java.io.*;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -33,7 +34,9 @@ public class Profile extends Activity{
     	switch (item.getItemId()){
 	    	case 1:
 	    	/* Actions in case that Add Profile is pressed */
-	    		addProfile(100, 100, 100, 255, 0, "Smoke", "BBQ Party!");
+//	    		addProfile(100, 100, 100, 255, 0, "Smoke", "BBQ Party!");
+	    		Intent newProfileIntent = new Intent(Profile.this, NewProfile.class);
+	    	    startActivity(newProfileIntent);
 	    		
 	    	return true;
 	    	

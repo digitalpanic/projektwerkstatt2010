@@ -12,6 +12,7 @@
 		<activity android:name="About" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
 		<activity android:name="Config" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
 		<activity android:name="Profile" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"></activity>
+		<activity android:name="NewProfile" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar"></activity>
 	</application>
 	<uses-sdk android:minSdkVersion="4" />
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
