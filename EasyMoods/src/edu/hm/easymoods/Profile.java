@@ -18,9 +18,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Profile extends Activity{
-	private ArrayList<String[]> profileList = new ArrayList<String[]>();
+	private ArrayList<String[]> profileList;
 	private final SetAVR avr = new SetAVR("192.168.1.90");
 	private String FILENAME = "profiles.txt";
+	private Spinner profileSpinner;
 
 
 	public boolean onCreateOptionsMenu(Menu menu){
@@ -33,21 +34,32 @@ public class Profile extends Activity{
 	public boolean onOptionsItemSelected (MenuItem item){
     	switch (item.getItemId()){
 	    	case 1:
-	    	/* Actions in case that Add Profile is pressed */
-//	    		addProfile(100, 100, 100, 255, 0, "Smoke", "BBQ Party!");
+	    		/* Actions in case New Profile is pressed */
 	    		Intent newProfileIntent = new Intent(Profile.this, NewProfile.class);
 	    	    startActivity(newProfileIntent);
-	    		
-	    	return true;
+	    	    
+	    	    this.onCreate(null);
+	    	    return true;
 	    	
 	    	case 2:
-	    	/* Actions in case that Edit Profile is pressed */
-	    	return true;
-	    	
+	    		/* Actions in case Edit Profile is pressed */
+	    		Intent editProfileIntent = new Intent(Profile.this, EditProfile.class);
+	    	    startActivity(editProfileIntent);
+	    	    
+	    	    // 1. load current profile into the edit view
+	    	    // 2. like in Delete
+	    	    // n. Add updated line into the text file
+	    	    return true;
+	    		
 	    	case 3: 
-	    	/* Actions in case that Delete Profile is pressed */
+	    		/* Actions in case Delete Profile is pressed */
+	    		
+	    		// 1. select spinnerElelent.Id. +1 => line in text file, which should be deleted
+	    		// 2. open file for edit and delete that line
+	    		// 3. delete that element from the ArrayList
+	    		// 4. update Spinner (adapter?)
+	    		return true;
 	    }
-    	
     	return false;
     }
 	
@@ -55,9 +67,7 @@ public class Profile extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
         
-       Spinner profilesSpinner = (Spinner)findViewById(R.id.ProfilesSpinner);
-       
-//       createDefaults();
+       profileSpinner = (Spinner)findViewById(R.id.ProfilesSpinner);
        
        readProfiles();
        
@@ -69,10 +79,9 @@ public class Profile extends Activity{
        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerItems);
        
        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       profilesSpinner.setAdapter(adapter);
+       profileSpinner.setAdapter(adapter);
        
-       
-       profilesSpinner.setOnItemSelectedListener(
+       profileSpinner.setOnItemSelectedListener(
                new AdapterView.OnItemSelectedListener() {
                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                        String[] profile = profileList.get(position);
@@ -121,7 +130,10 @@ public class Profile extends Activity{
 
 	
 	private void readProfiles(){
+		profileList = new ArrayList<String[]>();
+		
 		try {
+			
 			FileInputStream fin = openFileInput(FILENAME);
 			BufferedReader bw = new BufferedReader(new InputStreamReader(fin));
 			
@@ -139,21 +151,6 @@ public class Profile extends Activity{
 			createDefaults();
 		}catch (IOException e) { Log.d("Profile","IOException reading"); }
 		
-	}
-	
-	private void addProfile(int r, int g, int b, int d, int scent, String name, String desc){
-		try {	// append new profile
-			FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_APPEND);
-			
-			PrintWriter pw = new PrintWriter(new OutputStreamWriter(fos));
-			String newProfile = r + "," + g + "," + b + "," + d + "," + scent + "," + name + "," + desc;
-			
-			pw.println(newProfile);
-			pw.flush();
-			
-			pw.close();
-    	
-		} catch (IOException e) { Log.d("Profile","IOException writing"); }
 	}
 
 }
