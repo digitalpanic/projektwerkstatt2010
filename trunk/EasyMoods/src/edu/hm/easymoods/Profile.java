@@ -1,8 +1,11 @@
-package hm.edu.easymoods;
+package edu.hm.easymoods;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
+
+import edu.hm.easymoods.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -77,7 +80,7 @@ public class Profile extends Activity{
         }
         
         // Listener fuer SetColorButton setzen und Context und ip-adresse uebergeben
-        setProfile = (Button)findViewById(R.id.SetProfileButton);
+        setProfile = (Button)findViewById(R.id.SetColorButton);
         setProfile.setOnClickListener( new OnClickListener() {
         	public void onClick(View v) {
         		if (isFocused != null) {

@@ -1,4 +1,4 @@
-package hm.edu.easymoods;
+package edu.hm.easymoods;
 
 import android.app.AlertDialog;
 import android.content.Context;
