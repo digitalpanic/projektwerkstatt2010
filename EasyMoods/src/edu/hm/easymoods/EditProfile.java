@@ -33,6 +33,8 @@ public class EditProfile extends Activity{
 	        TextView caption = (TextView)findViewById(R.id.profileCaption);
 	        caption.setText("EDIT");
 	 }
+	 
+	 
 
 
 }
