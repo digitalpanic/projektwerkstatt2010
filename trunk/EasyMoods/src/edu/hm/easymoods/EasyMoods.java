@@ -52,12 +52,7 @@ public class EasyMoods extends Activity {
         dbl.ctx = this;
         dbl.ipAddr = ipAddress;
      
-        // Listener fuer SetColorButton setzen und Context und ip-adresse uebergeben
-        setColorButton = (Button)findViewById(R.id.SetColorButton);
-        SetColorButtonListener sbl = new SetColorButtonListener();
-        setColorButton.setOnClickListener(sbl);
-        sbl.ctx = this;
-        sbl.ipAddr = ipAddress;
+       
         
         // EditTexts auswaehlen
         redValue = (EditText)findViewById(R.id.redVal);     
@@ -65,11 +60,6 @@ public class EasyMoods extends Activity {
         blueValue = (EditText)findViewById(R.id.blueVal);     
         dimValue = (EditText)findViewById(R.id.dimVal);
         
-        // EditTexts an der SetColorButton Listener uebergeben
-        sbl.redValue = redValue;     
-        sbl.greenValue = greenValue;        
-        sbl.blueValue = blueValue;     
-        sbl.dimValue = dimValue;
         
         // rote SeekBar auswahlen und ein onChange-Listener fuer ihm erzeugen
         seekBar = (SeekBar)findViewById(R.id.redSeekbar);
