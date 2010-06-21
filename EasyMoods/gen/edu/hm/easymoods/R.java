@@ -18,10 +18,10 @@ public final class R {
         public static final int tag=0x7f020004;
     }
     public static final class id {
+        public static final int ProfilesSpinner=0x7f05002e;
         public static final int ScrollView01=0x7f050000;
         public static final int ScrollView02=0x7f050003;
         public static final int SetColorButton=0x7f050026;
-        public static final int SetProfileButton=0x7f050035;
         public static final int VisualEqToggle=0x7f050024;
         public static final int blueSeekbar=0x7f050014;
         public static final int blueVal=0x7f050015;
@@ -33,6 +33,7 @@ public final class R {
         public static final int ipAddrText=0x7f050020;
         public static final int preview=0x7f050011;
         public static final int previewHex=0x7f050017;
+        public static final int profileDesc=0x7f050030;
         public static final int redSeekbar=0x7f050009;
         public static final int redVal=0x7f05000a;
         public static final int row_BlueColor=0x7f050012;
@@ -58,19 +59,13 @@ public final class R {
         public static final int txt_sep2=0x7f050022;
         public static final int txt_sep5=0x7f05001f;
         public static final int txt_separator=0x7f050002;
-        public static final int widget112=0x7f05002f;
-        public static final int widget137=0x7f050032;
+        public static final int widget137=0x7f05002c;
         public static final int widget156=0x7f050028;
-        public static final int widget83=0x7f050034;
-        public static final int widget84=0x7f05002c;
+        public static final int widget83=0x7f05002f;
         public static final int widget85=0x7f05002b;
-        public static final int widget87=0x7f050033;
+        public static final int widget87=0x7f05002d;
         public static final int widget88=0x7f050029;
         public static final int widget89=0x7f05002a;
-        public static final int widget91=0x7f05002d;
-        public static final int widget92=0x7f050031;
-        public static final int widget93=0x7f050030;
-        public static final int widget94=0x7f05002e;
         public static final int widget96=0x7f050001;
     }
     public static final class layout {
