@@ -25,6 +25,14 @@ public class SetAVR {
 			e.printStackTrace();
 		}
 	}
+	
+	public void setIPAddress(String ipAddress) {
+		try {
+			this.address = InetAddress.getByName(ipAddress);
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+	}
 
 	void setColor(int rVal, int gVal, int bVal, int dimval, StellaSetType type) {
 		double[] rgbVals = convert(rVal, gVal, bVal, dimval);

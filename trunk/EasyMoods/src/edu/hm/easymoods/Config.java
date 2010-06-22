@@ -2,6 +2,7 @@ package edu.hm.easymoods;
 
 import edu.hm.easymoods.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,15 +17,17 @@ public class Config extends Activity{
 	private RadioButton isFade;
 	private String isSelected;
 	private Button apply;
-	
-	private EasyMoods easyMoods;
+	private ConfigData configData;
 	
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.config);
         
-        easyMoods = new EasyMoods();
+     
+        configData = ConfigData.getConfigDataInstance();
+      
+        
         
         ipAddress = (EditText)findViewById(R.id.IPAddress);
         ipAddress.setText(getString(R.string.ip_addr));
@@ -59,12 +62,12 @@ public class Config extends Activity{
         apply.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (ipAddress.getText().toString() != null)
-					easyMoods.setIpAddress(ipAddress.getText().toString());
+					configData.setIpAddress(ipAddress.getText().toString());
 				
 				if (isSelected.compareTo("isSet") == 0) {
-					easyMoods.setType(StellaSetType.STELLA_SET_IMMEDIATELY);
+					configData.setType(StellaSetType.STELLA_SET_IMMEDIATELY);
 				} else {
-					easyMoods.setType(StellaSetType.STELLA_SET_FADE);
+					configData.setType(StellaSetType.STELLA_SET_FADE);
 				}
 				
 			}
