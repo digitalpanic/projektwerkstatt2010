@@ -23,14 +23,17 @@ public class EasyMoods extends Activity {
 	private TextView previewHex;
 	private View preview;
 	private SetAVR avr;
-	private StellaSetType type;
-	private String ipAddress;
+	private ConfigData config;
 		
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
-    	ipAddress = getString(R.string.ip_addr);
-    	avr = new SetAVR(ipAddress);
+    	
+    	config = ConfigData.getConfigDataInstance();
+    	config.setIpAddress(getString(R.string.ip_addr));
+    	
+    	avr = new SetAVR(config.getIpAddress());
+    
     	
         setContentView(R.layout.manuelcolor);
         
@@ -50,7 +53,7 @@ public class EasyMoods extends Activity {
         DuftButtonListener dbl = new DuftButtonListener();
         duftButton.setOnClickListener(dbl);
         dbl.ctx = this;
-        dbl.ipAddr = ipAddress;
+        dbl.ipAddr = config.getIpAddress();
      
        
         
@@ -113,9 +116,9 @@ public class EasyMoods extends Activity {
     private void setStellaSetType(String stellaSetType) {
 		
     	if (stellaSetType.compareTo("immediate") == 0) {
-    		this.type = StellaSetType.STELLA_SET_IMMEDIATELY;
+    		config.setType(StellaSetType.STELLA_SET_IMMEDIATELY);
     	} else if (stellaSetType.compareTo("fade") == 0) {
-    		this.type = StellaSetType.STELLA_SET_FADE;
+    		config.setType(StellaSetType.STELLA_SET_FADE);
     	}
 		
 	}
@@ -140,16 +143,7 @@ public class EasyMoods extends Activity {
     	previewHex.setText(Integer.toHexString(previewColor));	// Farbe-Hex ausgeben
     	
     	// Farbeaenderung im real-time
-    	avr.setColor(redVal, greenVal, blueVal, dimVal, this.type);
-    }
-
-	public void setType(StellaSetType type) {
-		this.type = type;
-	}
-
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-	}
-    
-    
+    	avr.setIPAddress(config.getIpAddress());
+    	avr.setColor(redVal, greenVal, blueVal, dimVal, config.getType());
+    }    
 }
