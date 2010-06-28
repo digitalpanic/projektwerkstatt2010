@@ -110,9 +110,8 @@
 		android:orientation="horizontal" android:layout_height="fill_parent" android:layout_width="500px">
 		<TextView android:id="@+id/txt_separator"
 			android:text="" android:layout_height="wrap_content" android:layout_width="1px">
-		</TextView>
-		<ToggleButton android:id="@+id/VisualEqToggle"
-			android:textOff="Visual EQ off" android:textOn="Visual EQ on" android:layout_height="wrap_content" android:layout_width="fill_parent"/>
+		</TextView><ToggleButton android:id="@+id/VisualEqToggle" android:textOff="Visual EQ off" android:textOn="Visual EQ on" android:layout_height="wrap_content" android:layout_width="fill_parent" />
+		
 	</TableRow>
 	<TableRow android:id="@+id/row_colorsButton"
 		android:layout_width="320px" android:layout_height="wrap_content"
@@ -130,7 +129,8 @@
 			android:layout_width="fill_parent" android:layout_height="fill_parent"
 			android:text="">
 		</TextView>
-		<Button android:text="Duft!" android:id="@+id/duftButton" android:layout_width="wrap_content" android:layout_height="fill_parent">
-		</Button>
+		
 	</TableRow>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/DuftButton1" android:text="Duft 1 !"></Button>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Duft 2 !" android:id="@+id/DuftButton2"></Button>
 </TableLayout>

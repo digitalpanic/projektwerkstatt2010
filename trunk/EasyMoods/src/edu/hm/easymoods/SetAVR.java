@@ -8,8 +8,14 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
+/**
+ * Singleton Class
+ * @author Franziska
+ *
+ */
 public class SetAVR {
 	
+	private static SetAVR setAVRInstance;
 	private InetAddress address;
 	private static int port = 2702;
 	private static byte rChannel = 0;
@@ -18,14 +24,15 @@ public class SetAVR {
 	private static byte scentChannel1 = 3;
 	private static byte scentChannel2 = 4;
 	
-	public SetAVR(String ipAddress) {
-		try {
-			this.address = InetAddress.getByName(ipAddress);
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
+	private SetAVR() {}
+
+	public static SetAVR getAVRInstance() {
+		if (setAVRInstance == null) {
+			setAVRInstance = new SetAVR();
 		}
+		return setAVRInstance;
+		
 	}
-	
 	public void setIPAddress(String ipAddress) {
 		try {
 			this.address = InetAddress.getByName(ipAddress);
@@ -96,10 +103,17 @@ public class SetAVR {
 		
 	}
 
-	void spray() {
+	void spray(int i) {
+		
 		byte[] data = new byte[3];
 		data[ 0 ] = 0; // Type
-		data[ 1 ] = this.scentChannel1; // Channel
+		
+		if (i == 1) {
+			data[ 1 ] = this.scentChannel1; // Channel
+		} else if (i == 2) {
+			data [ 1 ] = this.scentChannel2; //Channel
+		}
+		
 		data[ 2 ] = (byte) 255; // Value
 
  		DatagramSocket socket;
