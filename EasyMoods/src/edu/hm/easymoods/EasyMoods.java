@@ -5,16 +5,23 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+/**
+ *
+ * @author Jevgeni, Franziska
+ *
+ */
 public class EasyMoods extends Activity {
 	private ToggleButton vqToggle;
 	private Button setColorButton;
-	private Button duftButton;
+	private Button duft1Button;
+	private Button duft2Button;
 	private SeekBar seekBar;
 	private EditText redValue;
 	private EditText greenValue;
@@ -32,7 +39,8 @@ public class EasyMoods extends Activity {
     	config = ConfigData.getConfigDataInstance();
     	config.setIpAddress(getString(R.string.ip_addr));
     	
-    	avr = new SetAVR(config.getIpAddress());
+    	avr = SetAVR.getAVRInstance(); 
+    	avr.setIPAddress(config.getIpAddress());
     
     	
         setContentView(R.layout.manuelcolor);
@@ -49,14 +57,25 @@ public class EasyMoods extends Activity {
         vqToggle.setOnClickListener(vtl);
         
         // Listener fuer duftButton setzen und Context und ip-adresse uebergeben
-        duftButton = (Button)findViewById(R.id.duftButton);
-        DuftButtonListener dbl = new DuftButtonListener();
-        duftButton.setOnClickListener(dbl);
-        dbl.ctx = this;
-        dbl.ipAddr = config.getIpAddress();
-     
-       
+        duft1Button = (Button)findViewById(R.id.DuftButton1);
+        duft1Button.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				avr.spray(1);
+				
+			}
+        	
+        });
         
+        duft2Button = (Button)findViewById(R.id.DuftButton2);
+        duft2Button.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				avr.spray(2);
+				
+			}
+        	
+        });
+  
+   
         // EditTexts auswaehlen
         redValue = (EditText)findViewById(R.id.redVal);     
         greenValue = (EditText)findViewById(R.id.greenVal);        

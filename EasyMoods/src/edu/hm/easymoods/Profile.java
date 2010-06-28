@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 public class Profile extends Activity{
 	private ArrayList<String[]> profileList;
-	private final SetAVR avr = new SetAVR("192.168.1.90");
+	private SetAVR avr;
 	private String FILENAME = "profiles.txt";
 	private Spinner profileSpinner;
 
@@ -69,6 +69,9 @@ public class Profile extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
+      	
+    	avr = SetAVR.getAVRInstance(); 
+    	avr.setIPAddress(getString(R.string.ip_addr));
         
        profileSpinner = (Spinner)findViewById(R.id.ProfilesSpinner);
        
