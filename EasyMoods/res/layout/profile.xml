@@ -2,8 +2,7 @@
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
 	<TextView android:id="@+id/widget96" android:layout_width="319px"
-		android:layout_height="wrap_content" android:text="easy Moods"
-		android:textSize="30px" android:textStyle="bold" android:gravity="center">
+		android:layout_height="wrap_content" android:textSize="30px" android:textStyle="bold" android:gravity="center" android:text="Profile">
 	</TextView>
 	<TableRow android:id="@+id/widget88" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:padding="3px"
@@ -22,7 +21,7 @@
 	</TableRow>
 	<TableRow android:id="@+id/widget87" android:layout_height="wrap_content" android:padding="3px"
 		android:orientation="horizontal" android:layout_width="300px">
-		<Spinner android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ProfilesSpinner" android:paddingRight="30px"></Spinner>
+		<Spinner android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/ProfilesSpinner" android:paddingRight="30px"></Spinner>
 	</TableRow>
 	<TableRow android:id="@+id/widget83" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20px">

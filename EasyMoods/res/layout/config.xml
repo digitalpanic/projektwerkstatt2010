@@ -9,13 +9,14 @@
 		<TableRow android:id="@+id/row_scentButton"
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content"
+			android:gravity="center"
 			android:orientation="horizontal">
 			<TextView android:id="@+id/widget96" 
 			android:layout_height="wrap_content"
 			android:text="Einstellungen" 
 			android:textSize="30px"
 			android:textStyle="bold" 
-			android:gravity="center">
+			android:gravity="center" android:layout_width="fill_parent">
 			</TextView>
 		</TableRow>
 		<TableRow>
@@ -43,16 +44,16 @@
 		</TableRow>
 		<TableRow>
 			<RadioGroup>
-				<RadioButton android:text="Sofort" android:id="@+id/IsSet">
+				<RadioButton android:text="   Sofort" android:id="@+id/IsSet" android:layout_width="fill_parent">
 				</RadioButton>
-				<RadioButton android:text="Langsam" android:id="@+id/IsFade">
+				<RadioButton android:text="Langsam" android:id="@+id/IsFade" android:layout_width="fill_parent">
 				</RadioButton>
 			</RadioGroup>
 		</TableRow>
-		<TableRow>
-			<Button android:text="Übernehmen" android:id="@+id/ApplyConfigButton">
+		<!-- <TableRow android:layout_weight="fill_parent"> -->
+			<Button android:text="Übernehmen" android:id="@+id/ApplyConfigButton" android:layout_width="fill_parent">
 			</Button>
-		</TableRow>
+		<!--  </TableRow>-->
 		<TableRow>
 			
 		</TableRow><TextView android:text="Profile" android:layout_width="wrap_content">   
