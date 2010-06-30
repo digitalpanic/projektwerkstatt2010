@@ -1,6 +1,6 @@
 <TableLayout android:id="@+id/widget156"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
-	android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+	android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android" android:onClick="onCreate(null);">
 	<TextView android:id="@+id/widget96" android:layout_width="319px"
 		android:layout_height="wrap_content" android:textSize="30px" android:textStyle="bold" android:gravity="center" android:text="Profile">
 	</TextView>
@@ -22,7 +22,9 @@
 	<TableRow android:id="@+id/widget87" android:layout_height="wrap_content" android:padding="3px"
 		android:orientation="horizontal" android:layout_width="300px">
 		<Spinner android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/ProfilesSpinner" android:paddingRight="30px"></Spinner>
-	</TableRow>
+	
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Refresh" android:id="@+id/RefreshButton"></Button>
+</TableRow>
 	<TableRow android:id="@+id/widget83" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20px">
 			
