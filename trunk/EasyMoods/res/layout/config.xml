@@ -28,7 +28,7 @@
 			</TextView>
 		</TableRow>
 		<TableRow>
-			<EditText android:id="@+id/IPAddress">
+			<EditText android:id="@+id/IPAddress" android:minWidth="460px">
 			</EditText>
 		</TableRow>
 		<TableRow>

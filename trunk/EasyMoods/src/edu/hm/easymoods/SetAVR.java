@@ -61,19 +61,19 @@ public class SetAVR {
 		//set R Value
 		byte[] rData = new byte[3];
 		rData[ 0 ] = setType; // Type
-		rData[ 1 ] = this.rChannel; // Channel
+		rData[ 1 ] = SetAVR.rChannel; // Channel
 		rData[ 2 ] = (byte) rgbVals[0]; // Value
 		
 		//set G Value
 		byte[] gData = new byte[3];
 		gData[ 0 ] = setType; // Type
-		gData[ 1 ] = this.gChannel; // Channel
+		gData[ 1 ] = SetAVR.gChannel; // Channel
 		gData[ 2 ] = (byte) rgbVals[1]; // Value
 		
 		//set B Value
 		byte[] bData = new byte[3];
 		bData[ 0 ] = setType; // Type
-		bData[ 1 ] = this.bChannel; // Channel
+		bData[ 1 ] = SetAVR.bChannel; // Channel
 		bData[ 2 ] = (byte) rgbVals[2]; // Value
 
  		DatagramSocket socket;
@@ -109,9 +109,9 @@ public class SetAVR {
 		data[ 0 ] = 0; // Type
 		
 		if (i == 1) {
-			data[ 1 ] = this.scentChannel1; // Channel
+			data[ 1 ] = SetAVR.scentChannel1; // Channel
 		} else if (i == 2) {
-			data [ 1 ] = this.scentChannel2; //Channel
+			data [ 1 ] = SetAVR.scentChannel2; //Channel
 		}
 		
 		data[ 2 ] = (byte) 255; // Value

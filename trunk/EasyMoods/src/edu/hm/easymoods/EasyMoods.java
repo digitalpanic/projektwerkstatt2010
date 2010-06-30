@@ -3,14 +3,12 @@ package edu.hm.easymoods;
 import edu.hm.easymoods.R;
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 /**
  * 
@@ -18,8 +16,6 @@ import android.widget.ToggleButton;
  * 
  */
 public class EasyMoods extends Activity {
-	private ToggleButton vqToggle;
-	private Button setColorButton;
 	private Button duft1Button;
 	private Button duft2Button;
 	private SeekBar seekBar;

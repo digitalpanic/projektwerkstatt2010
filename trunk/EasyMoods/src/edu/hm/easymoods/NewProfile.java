@@ -1,10 +1,7 @@
 package edu.hm.easymoods;
 
-import java.io.*;
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +20,7 @@ public class NewProfile extends Activity{
 	private EditText desc;
 	private Button button;
 	private SeekBar seekBar;
-	private String FILENAME = "profiles.txt";
+	private ProfileManager profileMan = ProfileManager.getInstance(this);
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +100,7 @@ public class NewProfile extends Activity{
 			@Override public void onClick(View v) {
 				int scentId = getScentId();
 				
-				addProfile(Integer.parseInt(redValue.getText().toString()),
+				profileMan.addProfile(Integer.parseInt(redValue.getText().toString()),
 						Integer.parseInt(greenValue.getText().toString()),
 						Integer.parseInt(blueValue.getText().toString()),
 						Integer.parseInt(dimValue.getText().toString()),
@@ -149,18 +146,4 @@ public class NewProfile extends Activity{
     	preview.setBackgroundColor(previewColor);		// Farbe uebernehmen
     }
     
-    public void addProfile(int r, int g, int b, int d, int scent, String name, String desc){
-		try {	// append new profile
-			FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_APPEND);
-			
-			PrintWriter pw = new PrintWriter(new OutputStreamWriter(fos));
-			String newProfile = r + "," + g + "," + b + "," + d + "," + scent + "," + name + "," + desc;
-			
-			pw.println(newProfile);
-			pw.flush();
-			
-			pw.close();
-    	
-		} catch (IOException e) { Log.d("Profile","IOException writing"); }
-	}
 }

@@ -3,7 +3,6 @@ package edu.hm.easymoods;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
-import android.provider.Settings.System;
 import android.util.Log;
 import android.view.View;
 import android.widget.ToggleButton;
